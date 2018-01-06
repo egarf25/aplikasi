@@ -91,7 +91,9 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_profile) {
             Intent intent = new Intent(MainActivity.this, DetProfileActivity.class);
             startActivity(intent);
-        } else if (id == R.id.nav_berita) {
+        } else if (id == R.id.nav_beranda) {
+            Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_berita) {
 

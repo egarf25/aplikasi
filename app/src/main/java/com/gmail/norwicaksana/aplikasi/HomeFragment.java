@@ -39,11 +39,12 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.fragment_home, container, false);
         // Inflate the layout for this fragment
-        sliderView = (SliderView) findViewById(R.id.sliderView);
-        mLinearLayout = (LinearLayout) findViewById(R.id.pagesContainer);
+        sliderView = (SliderView) rootView.findViewById(R.id.sliderView);
+        mLinearLayout = (LinearLayout) rootView.findViewById(R.id.pagesContainer);
         setupSlider();
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        return rootView;
     }
 
     private void setupSlider() {
@@ -54,9 +55,9 @@ public class HomeFragment extends Fragment {
         fragments.add(FragmentSlider.newInstance("http://www.menucool.com/slider/prod/image-slider-3.jpg"));
         fragments.add(FragmentSlider.newInstance("http://www.menucool.com/slider/prod/image-slider-4.jpg"));
 
-        mAdapter = new SliderPagerAdapter(getSupportFragmentManager(), fragments);
+        mAdapter = new SliderPagerAdapter(getFragmentManager(), fragments);
         sliderView.setAdapter(mAdapter);
-        mIndicator = new SliderIndicator(this, mLinearLayout, sliderView, R.drawable.indicator_circle);
+        mIndicator = new SliderIndicator(getActivity(), mLinearLayout, sliderView, R.drawable.indicator_circle);
         mIndicator.setPageCount(fragments.size());
         mIndicator.show();
     }

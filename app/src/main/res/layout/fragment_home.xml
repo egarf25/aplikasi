@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <com.bagicode.www.bagisliderview._sliders.SliderView
+            <com.gmail.norwicaksana.aplikasi._sliders.SliderView
                 android:id="@+id/sliderView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
